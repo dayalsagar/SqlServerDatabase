@@ -15,7 +15,8 @@ steps:
 
 - task: MSBuild@1
   inputs:
-    solution: 'SqlServerDatabase.sln'
+    solution: '**/*.sln'
+    msbuildVersion: '12.0'
     msbuildArguments: '/p:OutDir=$(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
